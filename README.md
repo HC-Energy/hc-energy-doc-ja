@@ -1,2 +1,4 @@
-# hc_energy_doc_ja
-The document for HC-Energy
+# hc-energy-doc-ja
+
+The document for HC-Energy in Japanese
+
