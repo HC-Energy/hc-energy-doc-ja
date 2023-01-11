@@ -13,6 +13,7 @@
 .. |n-1| replace:: :math:`n-1`
 .. |n| replace:: :math:`n`
 .. |n+1| replace:: :math:`n+1`
+.. |d| replace:: :math:`d`
 
 ..
     上付き文字
