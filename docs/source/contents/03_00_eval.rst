@@ -10,6 +10,7 @@
     ./03_04_eval_solar_position
     ./03_05_eval_weather
     ./03_06_eval_schedule
+    ./03_07_eval_core
     ./03_09_eval_sequence
     ./03_13_eval_room
     ./03_14_eval_furniture
