@@ -13,6 +13,7 @@
     ./03_07_eval_core
     ./03_08_eval_period
     ./03_09_eval_sequence
+    ./03_10_eval_building
     ./03_13_eval_room
     ./03_14_eval_furniture
     ./03_16_eval_shape_factor
