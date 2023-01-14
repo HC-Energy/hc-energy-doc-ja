@@ -338,10 +338,10 @@
     \begin{align*}
         x_{i,n} = \begin{cases}
             x_{i,n,p} \mid_{p=1} & ( p \le 1 ) \\
-            x_{i,n,p} \mid_{p=2} \cdot (p - 1) + x_{i,n,p} \mid_{p=1} \cdot (2 - p) & ( 1 \lt p \text{ and } p \le 2 ) \\
-            x_{i,n,p} \mid_{p=3} \cdot (p - 2) + x_{i,n,p} \mid_{p=2} \cdot (3 - p) & ( 2 \lt p \text{ and } p \le 3 ) \\
-            x_{i,n,p} \mid_{p=4} \cdot (p - 3) + x_{i,n,p} \mid_{p=3} \cdot (4 - p) & ( 3 \lt p \text{ and } p \le 4 ) \\
-            x_{i,n,p} \mid_{p=4} & ( 4 \lt p )
+            x_{i,n,p} \mid_{p=2} \cdot (p - 1) + x_{i,n,p} \mid_{p=1} \cdot (2 - p) & ( 1 < p \text{ and } p \le 2 ) \\
+            x_{i,n,p} \mid_{p=3} \cdot (p - 2) + x_{i,n,p} \mid_{p=2} \cdot (3 - p) & ( 2 < p \text{ and } p \le 3 ) \\
+            x_{i,n,p} \mid_{p=4} \cdot (p - 3) + x_{i,n,p} \mid_{p=3} \cdot (4 - p) & ( 3 < p \text{ and } p \le 4 ) \\
+            x_{i,n,p} \mid_{p=4} & ( 4 < p )
         \end{cases}
         \tag{6}
     \end{align*}
@@ -361,10 +361,10 @@
     \begin{align*}
         x_{i,n} = \begin{cases}
             x_{i,n,p} \mid_{p=1} & ( p \le 1 ) \\
-            \max( x_{i,n,p} \mid_{p=1}, x_{i,n,p} \mid_{p=2} ) & ( 1 \lt p \text{ and } p \le 2 ) \\
-            \max( x_{i,n,p} \mid_{p=2}, x_{i,n,p} \mid_{p=3} ) & ( 2 \lt p \text{ and } p \le 3 ) \\
-            \max( x_{i,n,p} \mid_{p=3}, x_{i,n,p} \mid_{p=4} ) & ( 3 \lt p \text{ and } p \le 4 ) \\
-            x_{i,n,p} \mid_{p=4} & ( 4 \lt p )
+            \max( x_{i,n,p} \mid_{p=1}, x_{i,n,p} \mid_{p=2} ) & ( 1 < p \text{ and } p \le 2 ) \\
+            \max( x_{i,n,p} \mid_{p=2}, x_{i,n,p} \mid_{p=3} ) & ( 2 < p \text{ and } p \le 3 ) \\
+            \max( x_{i,n,p} \mid_{p=3}, x_{i,n,p} \mid_{p=4} ) & ( 3 < p \text{ and } p \le 4 ) \\
+            x_{i,n,p} \mid_{p=4} & ( 4 < p )
         \end{cases}
         \tag{7}
     \end{align*}
