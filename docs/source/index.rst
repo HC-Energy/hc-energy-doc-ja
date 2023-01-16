@@ -14,7 +14,4 @@
     /contents/03_00_eval
     /contents/04_00_basis
     /contents/humidity_balance
-    /contents/infiltration
-    /contents/inclined_surface_solar_radiation
-    /contents/solar_shading
 
