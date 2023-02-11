@@ -19,8 +19,8 @@
     ./03_13_eval_boundary
     ./03_14_eval_shape_factor
     ./03_15_eval_direction
-
     ./03_16_eval_solar_shading
-
+    ./03_17_eval_window
+    
     ./03_19_eval_inclined_surface_solar_radiation
     ./03_32_eval_infiltration
