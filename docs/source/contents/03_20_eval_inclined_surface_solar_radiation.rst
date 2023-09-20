@@ -162,7 +162,8 @@
     :nowrap:
 
     \begin{align*}
-        I_{s,ref,j,n} = \rho_{gnd} \cdot f_{gnd,j} \cdot I_{hrz,n} \tag{3}
+        I_{s,ref,j,n} = \rho_{gnd} \cdot f_{gnd,j} \cdot I_{hrz,n}
+        \tag{3}
     \end{align*}
 
 | ここで、
@@ -178,7 +179,8 @@
     :nowrap:
 
     \begin{align*}
-        R_{s,eff,j,n} = R_{eff,n} \cdot f_{sky,j} \tag{4}
+        R_{s,eff,j,n} = R_{eff,n} \cdot f_{sky,j}
+        \tag{4}
     \end{align*}
 
 | ここで、
@@ -218,7 +220,8 @@
     :nowrap:
 
     \begin{align*}
-        I_{hrz,n} = \sin h_{sun,n} \cdot I_{dn,n} + I_{sky,n} \tag{7a}
+        I_{hrz,n} = \sin h_{sun,n} \cdot I_{dn,n} + I_{sky,n}
+        \tag{7a}
     \end{align*}
 
 :math:`h_{sun,n} < 0` の場合
@@ -227,7 +230,8 @@
     :nowrap:
 
     \begin{align*}
-        I_{hrz,n} = I_{sky,n} \tag{7b}
+        I_{hrz,n} = I_{sky,n}
+        \tag{7b}
     \end{align*}
 
 
@@ -245,7 +249,8 @@
     :nowrap:
 
     \begin{align*}
-        \phi_{j,n} = \arccos ( cos_{\phi,j,n} )  \tag{8}
+        \phi_{j,n} = \arccos ( cos_{\phi,j,n} ) 
+        \tag{8}
     \end{align*}
 
 | ここで、
@@ -263,7 +268,8 @@
 
     \begin{align*}
       cos{\phi,j,n} = \max \left( \sin h_{sun,n}, 0 \right)
-      \tagu{9a}
+      \tag{9a}
+    \end{align*}
 
 境界の方位が上向きまたは下向きではなく、 :math:`\cos h_{sun,n} \ne 0` の場合
 
