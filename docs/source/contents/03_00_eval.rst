@@ -27,4 +27,6 @@
     ./03_23_eval_mechanical_ventilation
     ./03_25_eval_occupants_form_factor
     ./03_26_eval_solar_absorption
+    ./03_27_eval_operation_mode
     ./03_28_eval_pmv
+
