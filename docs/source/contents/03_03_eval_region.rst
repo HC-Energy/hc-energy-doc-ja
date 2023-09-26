@@ -113,9 +113,11 @@
     :nowrap:
 
     \begin{align*}
-        \phi_{loc} = \frac{ Lon_{loc} }{ 180 } * \pi \tag{1}
+        \phi_{loc} = \frac{ Lon_{loc} }{ 180 } \cdot \pi
+        \tag{1}
     \end{align*}
 
     \begin{align*}
-        \lambda_{loc} = \frac{ Lat_{loc} }{ 180 } * \pi \tag{2}
+        \lambda_{loc} = \frac{ Lat_{loc} }{ 180 } \cdot \pi
+        \tag{2}
     \end{align*}
