@@ -62,31 +62,28 @@
       - 意味
       - 単位
     * - :math:`a_{sun,n}`
-      - ステップ |n| における太陽方位角
+      - solar direction at step |n| / ステップ |n| における太陽方位角
       - rad
     * - :math:`\theta_{o,n}`
-      - ステップ |n| における外気温度
+      - outside temperature at step |n| / ステップ |n| における外気温度
       - ℃
     * - :math:`X_{o,n}`
-      - ステップ |n| における外気絶対湿度
+      - outside absolute humidity at step |n| / ステップ |n| における外気絶対湿度
       - kg / kg(DA)
     * - :math:`I_{dn,n}`
-      - ステップ |n| における法線面直達日射量
+      - normal surface direct solar radiation at step |n| / ステップ |n| における法線面直達日射量
       - W / |m2|
     * - :math:`I_{sky,n}`
-      - ステップ |n| における水平面全天日射量
+      - horizontal sky solar radiation at step |n| / ステップ |n| における水平面全天日射量
       - W / |m2|
     * - :math:`R_{n,n}`
-      - ステップ |n| における夜間放射量
+      - nighttime solar radiation at step |n| / ステップ |n| における夜間放射量
       - W / |m2|
-    * - :math:`a_{sun,n}`
-      - ステップ |n| における太陽方位角
-      - rad
     * - :math:`h_{sun,n}`
-      - ステップ |n| における太陽高度
+      - solar altitude at step |n| / ステップ |n| における太陽高度
       - rad
     * - :math:`\theta_{o,ave}`
-      - 年平均外気温度
+      - annual average outside temperature / 年平均外気温度
       - ℃
 
 

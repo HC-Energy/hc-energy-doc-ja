@@ -41,16 +41,16 @@
       - 意味
       - 単位
     * - :math:`\phi_{loc}`
-      - 緯度
+      - latitude, 緯度
       - rad
     * - :math:`\lambda_{loc}`
-      - 経度
+      - longitude, 経度
       - rad
     * - :math:`{Lon}_{loc}`
-      - 緯度
+      - latitude, 緯度
       - 度
     * - :math:`{Lat}_{loc}`
-      - 経度
+      - longitude, 経度
       - 度
 
 

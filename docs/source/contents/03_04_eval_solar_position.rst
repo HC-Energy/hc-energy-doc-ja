@@ -44,67 +44,67 @@
       - 意味
       - 単位
     * - :math:`a_{sun,n}`
-      - ステップ |n| における太陽方位角
+      - solar direction at step |n| / ステップ |n| における太陽方位角
       - rad
     * - :math:`\sin{a_{sun,n}}`
-      - ステップ |n| における太陽方位角の正弦
+      - sine of solar direction at step |n| / ステップ |n| における太陽方位角の正弦
       - －
     * - :math:`\cos{a_{sun,n}}`
-      - ステップ |n| における太陽方位角の余弦
+      - cosine of solar direction at step |n| / ステップ |n| における太陽方位角の余弦
       - －
     * - :math:`h_{sun,n}`
-      - ステップ |n| における太陽高度
+      - solar altitude at step |n| / ステップ |n| における太陽高度
       - rad
     * - :math:`\varphi_{loc}`
-      - 緯度
+      - latitude / 緯度
       - rad
     * - :math:`\delta_{n}`
-      - ステップ |n| における赤緯
+      - declination at step n / ステップ |n| における赤緯
       - rad
     * - :math:`\omega_{n}`
-      - ステップ |n| における時角
+      - time angle at step |n| / ステップ |n| における時角
       - rad
     * - :math:`t_{m,n}`
-      - ステップ |n| における標準時
+      - standard time at step |n| / ステップ |n| における標準時
       - h
     * - :math:`\lambda_{loc}`
-      - 経度
+      - longitude / 経度
       - rad
     * - :math:`\lambda_{loc,mer}`
-      - 標準子午線の経度
+      - longitude of the standard meridian / 標準子午線の経度
       - rad
     * - :math:`e_{t,n}`
-      - ステップ |n| における均時差
+      - equation of time at step |n| / ステップ |n| における均時差
       - rad
     * - :math:`\nu_n`
-      - ステップ |n| における真近点離角
+      - true anomaly at step |n| / ステップ |n| における真近点離角
       - rad
     * - :math:`\epsilon_n`
-      - ステップ |n| における近日点と冬至点の角度
+      - angle between perihelion and winter solstice at step |n| / ステップ |n| における近日点と冬至点の角度
       - rad
     * - :math:`\delta_0`
-      - 北半球の冬至の日赤緯
+      - northern hemisphere winter solstice day declination / 北半球の冬至の日赤緯
       - rad
     * - :math:`m_n`
-      - ステップ |n| における平均近点離角
+      - mean anomaly at step |n| / ステップ |n| における平均近点離角
       - rad
     * - :math:`N`
-      - 1968年との年差
+      - annual difference to 1968 / 1968年との年差
       - 年
     * - :math:`n_{hour}`
-      - 1 時間を分割するステップ数
+      - number of steps to divide one hour / 1 時間を分割するステップ数
       - －
     * - :math:`d_n`
-      - ステップ |n| における年通算日( :math:`1` 月 :math:`1` 日を :math:`1` とする)
+      - year total date at step |n| / ステップ |n| における年通算日( :math:`1` 月 :math:`1` 日を :math:`1` とする)
       - day
     * - :math:`d_0`
-      - 平均軌道上の近日点通過日(暦表時による :math:`1968` 年 :math:`1` 月 :math:`1` 日正午基準の日差)
+      - mean orbital perihelion passage date / 平均軌道上の近日点通過日(暦表時による :math:`1968` 年 :math:`1` 月 :math:`1` 日正午基準の日差)
       - day
     * - :math:`d_{ay}`
-      - 近点年(近日点基準の公転周期日数)
+      - anomalistic year / 近点年(近日点基準の公転周期日数)
       - day
     * - :math:`y`
-      - 計算するする年(西暦)
+      - year of calculation / 計算する年(西暦)
       - 年
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,7 +120,7 @@
     * - 添え字
       - 意味
     * - :math:`n`
-      - ステップ
+      - step / ステップ
 
 ------------------------------------------------------------------------------------------------------------------------
 3 太陽方位角・高度
