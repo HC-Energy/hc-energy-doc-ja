@@ -19,13 +19,13 @@
     1. 本計算を行う日数, :math:`n_{d,main}`, d
     2. 助走計算を行う日数, :math:`n_{d,run-up}`, d
     3. 助走計算のうち建物全体を解く日数, :math:`n_{d,run-up-build}`, d
-    4. インターバル
+    4. 1時間を分割するステップ数, :math:`n_{hour}`
 
 本節で示す計算の結果、次の値が得られる。
 
     1. 本計算のステップ数, :math:`n_{step,main}`
     2. 助走計算のステップ数, :math:`n_{step,run-up}`
-    3. 助走計算のうち建物っ全体を解くステップ数, :math:`n_{step,run-up-build}`
+    3. 助走計算のうち建物全体を解くステップ数, :math:`n_{step,run-up-build}`
 
 ------------------------------------------------------------------------------------------------------------------------
 2 記号及び添え字
@@ -45,26 +45,26 @@
       - 意味
       - 単位
     * - :math:`n_{d,main}`
-      - 本計算を行う日数
+      - number of day for main calculation / 本計算を行う日数
       - d
     * - :math:`n_{d,run-up}`
-      - 助走計算を行う日数
+      - number of day for run-up calculation / 助走計算を行う日数
       - d
     * - :math:`n_{d,run-up-build}`
-      - 助走計算のうち建物全体を解く日数
+      - number of day for run-up-build calculation / 助走計算のうち建物全体を解く日数
       - d
     * - :math:`n_{step,hourly}`
-      - 1時間あたりの計算回数
-      - ー
+      - number of steps dividing hour / 1時間あたりの計算回数
+      - －
     * - :math:`n_{step,main}`
-      - 本計算のステップ数
-      - d
+      - number of steps for main calculation / 本計算のステップ数
+      - －
     * - :math:`n_{step,run-up}`
-      - 助走計算のステップ数
-      - d
+      - number of steps for run-up calculation / 助走計算のステップ数
+      - －
     * - :math:`n_{step,run-up-build}`
-      - 助走計算のうち建物全体を解くステップ数
-      - d
+      - number of steps for run-up-build calculation / 助走計算のうち建物全体を解くステップ数
+      - －
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 2.2 添え字
@@ -82,10 +82,8 @@
     :nowrap:
 
     \begin{align*}
-        n_{step,main} = n_{d,main} \cdot n_{step,hourly} \cdot 24 \tag{1}
+        n_{step,main} = n_{d,main} \cdot n_{hour} \cdot 24 \tag{1}
     \end{align*}
-
-1時間あたりの計算回数 :math:`n_{step,hourly}` は、インターバルの種類に応じて「インターバル」で定義される。
 
 助走計算のステップ数 :math:`n_{step,run-up}` は、次式で表される。
 
@@ -93,7 +91,7 @@
     :nowrap:
 
     \begin{align*}
-        n_{step,run-up} = n_{d,run-up} \cdot n_{step,hourly} \cdot 24 \tag{2}
+        n_{step,run-up} = n_{d,run-up} \cdot n_{hour} \cdot 24 \tag{2}
     \end{align*}
 
 助走計算のうち建物全体を解くステップ数 :math:`n_{step,run-up-build}` は、次式で表される。
@@ -102,7 +100,7 @@
     :nowrap:
 
     \begin{align*}
-        n_{step,run-up-build} = n_{day,run-up-build} \cdot n_{step,hourly} \cdot 24 \tag{3}
+        n_{step,run-up-build} = n_{day,run-up-build} \cdot n_{hour} \cdot 24 \tag{3}
     \end{align*}
 
 助走計算のうち建物全体を解く日数 :math:`n_{d,run-up-build}` は助走計算を行う日数 :math:`n_{d,run-up}` を超えてはならない。
