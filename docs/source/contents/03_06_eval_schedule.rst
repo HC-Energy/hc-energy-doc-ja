@@ -71,7 +71,7 @@
 
 .. list-table:: 表1 記号及び単位
     :header-rows: 1
-    :widths: 1,6,1
+    :widths: 2,6,1
 
     * - 記号
       - 意味
@@ -748,9 +748,9 @@ const
 
     \begin{align*}
         n_{p,calc} = \begin{cases}
-            30 & (A_{f,total} < 30) \\
-            \frac{A_{f,total}}{30} & (30 \le A_{f,total} < 120) \\
-            120 & A_{f,total} & (120 \le A_{f,total}) \\
+            30 & ( A_{f,total} < 30 ) \\
+            \frac{A_{f,total}}{30} & ( 30 \le A_{f,total} < 120 ) \\
+            120 & ( 120 \le A_{f,total} ) \\
         \end{cases}
         \tag{9}
     \end{align*}
