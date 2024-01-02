@@ -16,7 +16,7 @@
 
 次の値を必要とする。
 
-    1. 入力ファイルにおける building 要素
+    1. 入力ファイルにおける room 要素
 
 次の項目が得られる。
 
@@ -72,7 +72,10 @@
       - ventilation amount of room |i| when using natural ventilation / 室 |i| の自然換気利用時の換気量
       - |m3| / s
     * - :math:`Met_i`
-      - MET value of occupants in room i / 室 |i| の在室者のMet値
+      - MET value of occupants in room |i| / 室 |i| の在室者のMet値
+      - －
+    * - :math:`r_{sol,frt,i}`
+      - solar absorption ratio of furniture in room |i| / 室 |i| の備品等の日射吸収割合
       - －
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,8 +105,9 @@
 
 室 |i| の備品等の熱容量 :math:`C_{sh,frt,i}` 、
 室 |i| の備品等の湿気容量 :math:`C_{lh,frt,i}` 、
-室 |i| の空気と備品等間の熱コンダクタンス :math:`G_{sh,frt,i}` および
-室 |i| の空気と備品等間の湿気コンダクタンス :math:`G_{lh,frt,i}` は、
+室 |i| の空気と備品等間の熱コンダクタンス :math:`G_{sh,frt,i}` 、
+室 |i| の空気と備品等間の湿気コンダクタンス :math:`G_{lh,frt,i}` および
+室 |i| の備品等の日射吸収割合 :math:`r_{sol,frt,i}` は、
 「備品等」により求められる。
 
 室 |i| の自然換気利用時の換気量 :math:`V_{vent,ntr,set,i}` は、room 要素の Ventilation 要素の natural の値（単位 |m3| / h）を、
