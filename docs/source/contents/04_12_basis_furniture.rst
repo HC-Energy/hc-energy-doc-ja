@@ -55,6 +55,9 @@
     * - :math:`\theta_{r}`
       - room air temperature / 室の空気温度
       - ℃
+    * - :math:`\phi_A(t)`
+      - 室湿度のステップ入力（単位湿度変化）に対する吸熱応答（備品類の湿気容量J/(kg/kg(DA))で割って基準化したもの）
+      - 1 / s
 
     * - :math:`V_{r,i}`
       - 室 |i| の容積
@@ -311,9 +314,15 @@ b 夏期代表日（8月2、3日）
     :nowrap:
 
     \begin{align*}
-        \phi_A (t) = 2 \cdot \exp^{-2 \cdot \frac{t}{3600}}
+        \begin{split}
+          \phi_A (t)
+          &= A_0 + A_1 \cdot e^{ - \alpha_1 \cdot \frac{ t }{ 3600 } } \\
+          &= 2 \cdot e^{-2 \cdot \frac{t}{3600}} \\
+        \end{split}
         \tag{3}
     \end{align*}
+
+ここで、係数 :math:`A_0 = 0` 、係数 :math:`A_1 = 2` 、指数 :math:`\alpha_1=2` である。
 
 二等辺三角形の吸熱応答は次式となる。
 
@@ -321,8 +330,15 @@ b 夏期代表日（8月2、3日）
     :nowrap:
 
     \begin{align*}
-        \phi_A (t) = 1 - \exp^{-2 \cdot \frac{t}{3600}}
-        \tag{3}
+        \begin{split}
+          \phi_A (t)
+          &= \begin{cases}
+            A_0 + \frac{ A_1 }{ \alpha_1 \cdot \frac{ \Delta t }{ 3600 } } \cdot \left( 1 - e^{ - \alpha_1 \cdot \frac{ \Delta t }{ 3600 } } \right) & ( j = 0 ) \\
+            - \frac{ A_1 }{ \alpha_1 \cdot \frac{ \Delta t }{ 3600 } } \cdot \left( 1 - e^{ - \alpha_1 \cdot \frac{ \Delta t }{ 3600 } } \right)^2 \cdot \exp^{ - ( j - 1 ) \cdot \alpha_1 \cdot \frac{ \Delta t }{ 3600 } } & ( j > 0) \\
+          \end{cases} \\
+          &= 1 - \exp^{-2 \cdot \frac{t}{3600}} \\
+        \end{split}
+        \tag{4}
     \end{align*}
 
 これを図示すると次図のようになる。
@@ -338,7 +354,7 @@ b 夏期代表日（8月2、3日）
 
     \begin{align*}
         G_{lh,frt,i} = 0.0018 \cdot C_{lh,frt,i}
-        \tag{4}
+        \tag{5}
     \end{align*}
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -406,32 +422,44 @@ BEST-Hでは、すべて家具で吸収するモデルを採用している。
 
 .. image:: ../_static/images/04_12_basis_furniture_fig_17a.png
 
-図17(a) 計算結果（H28省エネ基準・RCなし） :sup:`(7)` 
+図17(a) 計算結果（H28省エネ基準・RCなし）（暖房期） :sup:`(7)` 
 
 .. image:: ../_static/images/04_12_basis_furniture_fig_17b.png
 
-図17(b) 計算結果（H28省エネ基準・RCあり） :sup:`(7)`
+図17(b) 計算結果（H28省エネ基準・RCあり）（暖房期） :sup:`(7)`
 
 .. image:: ../_static/images/04_12_basis_furniture_fig_17c.png
 
-図17(c) 計算結果（断熱なし・RCなし） :sup:`(7)`
+図17(c) 計算結果（断熱なし・RCなし）（暖房期） :sup:`(7)`
 
 .. image:: ../_static/images/04_12_basis_furniture_fig_17d.png
 
-図17(e) 計算結果（断熱なし・RCあり） :sup:`(7)`
+図17(d) 計算結果（断熱なし・RCあり）（暖房期） :sup:`(7)`
 
-.. image:: ../_static/images/04_12_basis_furniture_fig_17e.png
+.. image:: ../_static/images/04_12_basis_furniture_fig_18a.png
 
-図17(e) 計算結果（H28省エネ基準・RCあり） :sup:`(7)`
+図18(a) 計算結果（H28省エネ基準・RCなし）（冷房期） :sup:`(7)` 
+
+.. image:: ../_static/images/04_12_basis_furniture_fig_18b.png
+
+図18(b) 計算結果（H28省エネ基準・RCあり）（冷房期） :sup:`(7)`
+
+.. image:: ../_static/images/04_12_basis_furniture_fig_18c.png
+
+図18(c) 計算結果（断熱なし・RCなし）（冷房期） :sup:`(7)`
+
+.. image:: ../_static/images/04_12_basis_furniture_fig_18d.png
+
+図18(d) 計算結果（断熱なし・RCあり）（冷房期） :sup:`(7)`
 
 年間熱負荷の比較を次図に示す。
 透過日射の室内部位への吸収比率の設定が年間熱負荷に与える影響は限定的である。
 絶対値での差は断熱性能が悪いほうが大きくなる傾向にある。
 また、南向きを想定したため冷房よりも暖房の差の方が大きい。
 
-.. image:: ../_static/images/04_12_basis_furniture_fig_18.png
+.. image:: ../_static/images/04_12_basis_furniture_fig_19.png
 
-図18 計算結果（年間熱負荷）（図中FsolFlrは透過日射の床面の吸収比率を表す）
+図19 計算結果（年間熱負荷）（図中FsolFlrは透過日射の床面の吸収比率を表す）
 
 ここで設定した条件の範囲内における透過日射の室内部位への吸収比率を変化させたときの計算結果への影響はわずかであった。
 1次エネルギー計算時には3次元的な位置関係を入力するわけではない。
