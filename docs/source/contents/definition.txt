@@ -9,6 +9,7 @@
 .. |j| replace:: :math:`j`
 .. |j*| replace:: :math:`j^*`
 .. |k| replace:: :math:`k`
+.. |l| replace:: :math:`l`
 .. |m| replace:: :math:`m`
 .. |n-1| replace:: :math:`n-1`
 .. |n| replace:: :math:`n`
