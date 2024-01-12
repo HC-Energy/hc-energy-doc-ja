@@ -8,3 +8,4 @@
    ./04_12_basis_humidity_balance
    ./04_10_basis_building
    ./04_12_basis_furniture
+   ./04_14_basis_shape_factor
