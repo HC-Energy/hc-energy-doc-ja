@@ -2,7 +2,7 @@ version: 2
 
 # ビルドの詳細設定
 build:
-  os: ubuntu-22.04
+  os: "ubuntu-22.04"
   tools:
     python: "3.9"  # 使用するPythonのバージョンを指定
 
@@ -17,5 +17,5 @@ sphinx:
 
 # オプションで拡張機能を追加
 formats:
-  - html
-  - pdf
+  - "htmlzip"
+  - "pdf"
