@@ -1,3 +1,21 @@
 version: 2
+
+# ビルドの詳細設定
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.9"  # 使用するPythonのバージョンを指定
+
+# Pythonの依存関係を指定
+python:
+  install:
+    - requirements: docs/requirements.txt  # 依存関係ファイルのパスを指定
+
+# Sphinxの設定
 sphinx:
-  configuration: docs/conf.py
+  configuration: docs/conf.py  # Sphinxの設定ファイルのパスを指定
+
+# オプションで拡張機能を追加
+formats:
+  - html
+  - pdf
