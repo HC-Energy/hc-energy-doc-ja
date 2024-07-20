@@ -13,7 +13,7 @@ python:
 
 # Sphinxの設定
 sphinx:
-  configuration: docs/conf.py  # Sphinxの設定ファイルのパスを指定
+  configuration: docs/source/conf.py  # Sphinxの設定ファイルのパスを指定
 
 # オプションで拡張機能を追加
 formats:
