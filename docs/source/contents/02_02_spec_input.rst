@@ -755,6 +755,10 @@ outside_emissivity
     | 室外側長波長放射率を表します。
     | boundary_type が external_general_part, external_transparent_part, external_opaque_part の場合のみ指定します。
     | 単位は無次元で、0.0から1.0の間の値を数値（小数点型）で指定します。
+inside_emissivity
+    | 室内側長波長放射率を表します。
+    | 単位は無次元で、0.0から1.0の間の値を数値（小数点型）で指定します。
+    | この値を指定しない場合は規定値の0.9が設定されます。
 outside_heat_transfer_resistance
     | 室外側熱伝達抵抗を表します。
     | boundary_type が external_general_part, external_transparent_part, external_opaque_part の場合のみ指定します。
