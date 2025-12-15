@@ -13,13 +13,17 @@
 1 はじめに
 ------------------------------------------------------------------------------------------------------------------------
 
-本節では、室に付属する家具等の備品等の仕様について決定する。
+本節では、微小球に対する境界の重み係数及び室に接する境界の放射熱伝達率の計算方法を記す。
+途中、微小球から境界への形態係数を求めるが、その方法に、従来使われている面積割合を形態係数とみなす方法（面積割合を用いる方法）と
+この方法を改良して自己形態係数が 0 になるようにした方法（永田の方法）の2種類採用している。
 
 本節の計算は、次の値を必要とする。
 
     1. 室 |i| と境界 |j| の関係
     2. 境界 |j| の面積 :math:`A_{s,j}`
     3. 境界 |j| の室内側放射熱伝達率 :math:`h_{s,r,j}` (室 |i| の微小球に対する境界 |j| の重み係数を求める場合)
+    4. 境界 |j| の長波長放射率 :math:`\epsilon_{r,i,j}`
+    5. 微小球から境界への形態係数を求める方法の種類
 
 本節で示す計算の結果、次の値が得られる。
 
@@ -52,29 +56,26 @@
     * - :math:`A_{s,j}`
       - 境界 |j| の面積
       - |m2| 
+    * - :math:`A_{s,i,j}`
+      - 室 |i| の境界 |j| の面積
+      - |m2|
     * - :math:`\epsilon_{s,j}`
       - 境界 |j| の放射率
       - －
     * - :math:`\sigma`
       - ステファン・ボルツマン定数
       - W / |m2| K\ :sup:`4`\
-    * - :math:`\theta_{mrt,i}`
-      - 室 |i| 内の平均放射温度
+    * - :math:`\theta_{mrt}`
+      - 平均放射温度
       - ℃
     * - :math:`f_{i,j}`
       - 室 |i| の微小球から境界 |j| への形態係数
       - －
-    * - :math:`f_{i,k}`
-      - 室 |i| の微小球から同一方位となる境界のグループ |k| への形態係数
-      - －
-    * - :math:`A_{s,i,k}`
-      - 室 |i| の同一方位となる表面のグループ |k| の面積
-      - |m2|
     * - :math:`\bar{f_i}`
       - 非線形方程式 :math:`L(\bar{f_i})=0` の解
       - －
-    * - :math:`r_{a,i,k}`
-      - 同一方位となる表面のグループ |k| の面積が室 |i| 内の表面積の総和に占める比
+    * - :math:`r_{a,i,j}`
+      - 室 |i| に接する境界 |j| の面積が室 |i| 内の表面積の総和に占める比
       - －
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,8 +94,6 @@
       - 室
     * - :math:`j`
       - 境界
-    * - :math:`k`
-      - 同一方面となる境界のグループ
 
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -122,70 +121,45 @@
     :nowrap:
 
     \begin{align*}
-        h_{s,r,j}|_{j \in \pmb{J}_i} = \frac{ \epsilon_{s,j} }{ 1 - \epsilon_{s,j} \cdot f_{i,j}} \cdot 4 \cdot \sigma \cdot (\theta_{mrt,i} + 273.15 )^{3} \tag{2}
+        h_{s,r,j}|_{j \in \pmb{J}_i} = \frac{ \epsilon_{r,j} }{ 1 - \epsilon_{r,j} \cdot f_{j}} \cdot 4 \cdot \sigma \cdot (\theta_{mrt} + 273.15 )^{3} \tag{2}
     \end{align*}
 
 ステファン・ボルツマン定数 :math:`\sigma` は、 :math:`5.67 \times 10^{-8}` W / |m2| K\ :sup:`4`\ である。
 
-平均放射温度 :math:`\theta_{mrt,i}` は、 :math:`20` ℃ とする。
+平均放射温度 :math:`\theta_{mrt}` は、 :math:`20` ℃ とする。
 
-室 |i| の微小球からみた面 |j| への形態係数 :math:`f_{i,j}` は、次式で表される。
-
-.. math::
-    :nowrap:
-
-    \begin{align*}
-        f_{i,j} = \frac{ A_{s,j} }{ A_{s,i,k} } \cdot f_{i,k}  \tag{3}
-    \end{align*}
-    
-室 |i| の微小球から同一方位となる表面のグループ |k| への形態係数 :math:`f_{i,k}` は、:math:`\bar{f_i}` を変数として、次式で表される。
+室 |i| の微小球から境界 |j| への形態係数 :math:`f_{j}|_{j \in \pmb{J}_i}` は、:math:`\bar{f}_i` を変数として、次式で表される。
 
 .. math::
     :nowrap:
 
     \begin{align*}
         \begin{split}
-          f_{i,k}
-          &= f_{i,k}(\bar{f_i}) \\
-          &= \frac{1}{2} \Bigl\{ 1 - \mbox{sgn}(\left. 1 - 4 \cdot r_{a,i,k} \middle/ \bar{f_i} \right.) \sqrt{ | \left. 1 - 4 \cdot r_{a,i,k} \middle/ \bar{f_i} \right. | } \Bigr\}
+          f_{j}|_{j \in \pmb{J}_i}
+          &= f_{j}( \bar{f}_i|_{i=I_j} ) \\
+          &= \frac{1}{2} \Bigl\{ 1 - \mbox{sgn}(\left. 1 - 4 \cdot r_{a,j} \middle/ \bar{f}_i|_{i=I_j} \right.) \sqrt{ | \left. 1 - 4 \cdot r_{a,j} \middle/ \bar{f}_i|_{i=I_j} \right. | } \Bigr\}
         \end{split}
-        \tag{4}
+        \tag{3}
     \end{align*}
 
 ここで、 :math:`\mbox{sgn}(x)` は符号関数であり、 :math:`x>0` で  :math:`\mbox{sgn}(x)=1` を、 :math:`x=0` で  :math:`\mbox{sgn}(x)=0` を、 :math:`x<0` で  :math:`\mbox{sgn}(x)=-1` をとる。
 
-:math:`\bar{f_i}` は、式(4)で定義される :math:`f_{i,k}(\bar{f_i})` を用いて、次式で表す非線形方程式 :math:`L(\bar{f_i})=0` を解くことで求まる。
+:math:`\bar{f}_i` は、式(3)で定義される :math:`f_j(\bar{f}_i|_{i=I_j})` を用いて、次式で表す非線形方程式 :math:`L(\bar{f}_i|_{i=I_j})=0` を解くことで求まる。
 
 .. math::
     :nowrap:
 
     \begin{align*}
-        L(\bar{f_i}) = \sum_{k \in \pmb{K}_i } f_{i,k}(\bar{f_i}) - 1 = 0 \tag{5}
+        L(\bar{f}_i|_{i=I_j}) = \sum_{j \in \pmb{J}_i } f_{j}(\bar{f}_i|_{i=I_j}) - 1 = 0 \tag{4}
     \end{align*}
 
-室 |i| の同一方位となる表面のグループ |k| の面積の比 :math:`r_{a,i,k}` は、次式で表される。
+境界 |j| の面積の比 :math:`r_{a,j}` は、次式で表される。
 
 .. math::
     :nowrap:
 
     \begin{align*}
-        r_{a,i,k} =  \dfrac{A_{i,k}}{\sum\limits_{k\in{i}} A_{i,k}} \tag{6}
+        r_{a,j} =  \dfrac{ A_{s,j} }{ \sum\limits_{ j \in \pmb{J}_i } A_{s,j} } \tag{5}
     \end{align*}
 
-室 |i| の同一方位となる表面のグループ |k| の平均放射率 :math:`\epsilon_{i,k}` は、次式で表される。
-
-.. math::
-    :nowrap:
-
-    \begin{align*}
-        \epsilon_{i,k} =  \dfrac{1}{A_{i,k}} \sum\limits_{j\in{k}} \epsilon_{j} A_{j} \tag{7}
-    \end{align*}
-
-室 |i| の同一方位となる表面のグループ |k| の面積 :math:`a_{i,k}` は、次式で表される。
-
-.. math::
-    :nowrap:
-
-    \begin{align*}
-        A_{i,k} =  \sum\limits_{j\in{k}} A_{j} \tag{8}
-    \end{align*}
+ここで、 :math:`\pmb{J}_i` は、室 |i| に接する境界 |j| の集合を表す。
