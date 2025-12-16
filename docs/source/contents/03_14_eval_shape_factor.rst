@@ -56,11 +56,8 @@
     * - :math:`A_{s,j}`
       - 境界 |j| の面積
       - |m2| 
-    * - :math:`A_{s,i,j}`
-      - 室 |i| の境界 |j| の面積
-      - |m2|
-    * - :math:`\epsilon_{s,j}`
-      - 境界 |j| の放射率
+    * - :math:`\epsilon_{r,i,j}`
+      - 境界 |j| の室内側長波長放射率
       - －
     * - :math:`\sigma`
       - ステファン・ボルツマン定数
@@ -68,14 +65,14 @@
     * - :math:`\theta_{mrt}`
       - 平均放射温度
       - ℃
-    * - :math:`f_{i,j}`
-      - 室 |i| の微小球から境界 |j| への形態係数
+    * - :math:`f_j`
+      - 境界 |j| が接する室の微小球から境界 |j| への形態係数
       - －
     * - :math:`\bar{f_i}`
       - 非線形方程式 :math:`L(\bar{f_i})=0` の解
       - －
-    * - :math:`r_{a,i,j}`
-      - 室 |i| に接する境界 |j| の面積が室 |i| 内の表面積の総和に占める比
+    * - :math:`r_{a,j}`
+      - 境界 |j| の面積が境界 |j| が接する室におけるすべての境界の面積の総和に占める比
       - －
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +118,7 @@
     :nowrap:
 
     \begin{align*}
-        h_{s,r,j}|_{j \in \pmb{J}_i} = \frac{ \epsilon_{r,j} }{ 1 - \epsilon_{r,j} \cdot f_{j}} \cdot 4 \cdot \sigma \cdot (\theta_{mrt} + 273.15 )^{3} \tag{2}
+        h_{s,r,j}|_{j \in \pmb{J}_i} = \frac{ \epsilon_{r,i,j} }{ 1 - \epsilon_{r,i,j} \cdot f_{j}} \cdot 4 \cdot \sigma \cdot (\theta_{mrt} + 273.15 )^{3} \tag{2}
     \end{align*}
 
 ステファン・ボルツマン定数 :math:`\sigma` は、 :math:`5.67 \times 10^{-8}` W / |m2| K\ :sup:`4`\ である。
