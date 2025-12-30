@@ -29,4 +29,5 @@
     ./03_26_eval_solar_absorption
     ./03_27_eval_operation_mode
     ./03_28_eval_pmv
+    ./03_30_eval_occupants
 
